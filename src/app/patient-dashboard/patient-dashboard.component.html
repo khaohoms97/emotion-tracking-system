@@ -1,0 +1,12 @@
+<body>
+    <h2>User Dashboard</h2>
+    <!-- Show user data when logged in -->
+    <div class="row" *ngIf="authService.userData as user">
+        <h1>Hello! <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+        <!-- <p>User ID: <strong>{{user.uid}}</strong></p> -->
+        <p>Email: <strong>{{user.email}}</strong></p>
+        <button class="surveyBtn" onclick=" window.open('https://forms.gle/Pwq4rC3asmHoQw9H7','_blank')">ทำแบบสำรวจสภาพอารมณ์ในตอนนี้ของคุณ</button>
+        <p style="font-size: 16px"><a href="#" style="color: #37d351">View Your Old Daily Reports</a></p>
+        <button class="button" (click)="authService.SignOut()">Log Out</button>
+    </div>
+</body>
